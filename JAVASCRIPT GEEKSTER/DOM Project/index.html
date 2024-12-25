@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Div with DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        #target-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+            height: 100px;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="target-div">Hello, I'm a div!</div>
+
+    <script>
+        // Fetch the target div element
+        const targetDiv = document.getElementById("target-div");
+
+        // Change background color to yellow
+        targetDiv.style.backgroundColor = "yellow";
+
+        // Add margin of 20px
+        targetDiv.style.margin = "20px";
+
+        // Add padding of 10px
+        targetDiv.style.padding = "10px";
+
+        // Change font size to 18px
+        targetDiv.style.fontSize = "18px";
+
+        // Set font weight to bold
+        targetDiv.style.fontWeight = "bold";
+
+        // Change height to 200px
+        targetDiv.style.height = "200px";
+
+        // Change width to 300px
+        targetDiv.style.width = "300px";
+    </script>
+</body>
+</html>
