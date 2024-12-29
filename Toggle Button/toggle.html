@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .image-container img {
+            max-width: 200px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .toggle-btn {
+            background-color: #BB86FC;
+        }
+
+        .dark-mode .toggle-btn:hover {
+            background-color: #9b5dfc;
+        }
+
+        .dark-mode .image-container img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Light Mode</h1>
+        <button class="toggle-btn" onclick="toggleMode()">Click Here To Change Mode</button>
+        <div class="image-container">
+            <!-- <img id="mode-image" src="light-mode.png" alt="Light Mode"> -->
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const title = document.getElementById('title');
+            const image = document.getElementById('mode-image');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                title.textContent = 'Dark Mode';
+                image.src = 'dark-mode.png';
+                image.alt = 'Dark Mode';
+            } else {
+                title.textContent = 'Light Mode';
+                image.src = 'light-mode.png';
+                image.alt = 'Light Mode';
+            }
+        }
+    </script>
+</body>
+</html>
